@@ -15,7 +15,7 @@ xhr.open(
 
 // what to do when response is ready
 xhr.onload = function () {
-  if (this.status === 200) {
+  if (this.readyState == 4) {
     let json = JSON.parse(this.responseText);
     let articles = json.articles;
     console.log(articles);
