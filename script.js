@@ -1,11 +1,9 @@
-console.log("This is my script js file");
-
 // Initialize the news api parameters
 source = "India";
 let apiKey = "f22f0eb7e00d472a8d39aeb53b97fea7";
 
 // grab the news container
-let NewsAccordian = document.getElementById("NewsAccordian");
+let NewsAccordian = document.getElementById("NewsCard");
 
 // create a ajax get request
 const xhr = new XMLHttpRequest();
@@ -19,36 +17,29 @@ xhr.open(
 xhr.onload = function () {
   if (this.status === 200) {
     let json = JSON.parse(this.responseText);
-    console.log(json);
+    let articles = json.articles;
+    console.log(articles);
+    let newsHtml = "";
+    articles.forEach(function (element) {
+      let news = ` <div class="col">
+                    <div class="card">
+                      <img src="${element["urlToImage"]}" class="card-img-top"
+                        alt="" />
+                      <div class="card-body">
+                        <h5 class="card-title">${element["title"]}</h5>
+                        <p class="card-text">${element["description"]}</p>
+                      </div>
+                      <div class="card-footer">
+                    <small class="text-body-secondary">${element["publishedAt"]}</small>
+                      </div>
+                    </div>
+                  </div>`;
+      newsHtml += news;
+    });
+    NewsAccordian.innerHTML = newsHtml;
   } else {
     console.log("Some error occured");
   }
 };
 
 xhr.send();
-
-let news = `<div class="accordion-item">
-<h2 class="accordion-header">
-  <button
-    class="accordion-button"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#panelsStayOpen-collapseOne"
-    aria-expanded="true"
-    aria-controls="panelsStayOpen-collapseOne"
-  >
-    Accordion Item #1
-  </button>
-</h2>
-<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-  <div class="accordion-body">
-    <strong>This is the first item's accordion body.</strong> It is shown by
-    default, until the collapse plugin adds the appropriate classes that we
-    use to style each element. These classes control the overall appearance,
-    as well as the showing and hiding via CSS transitions. You can modify any
-    of this with custom CSS or overriding our default variables. It's also
-    worth noting that just about any HTML can go within the{" "}
-    <code>.accordion-body</code>, though the transition does limit overflow.
-  </div>
-</div>
-</div>`;
