@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewsX</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand">NewsX</a>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </nav>
+
+    <!-- title below the navbar -->
+    <div class="container my-3">
+      <h3><span class="badge badge-dark">Top News from India</span></h3>
+    </div>
+    <hr />
+
+    <!-- Accordian to dispaly news -->
+    <div class="accordion" id="NewsAccordian">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            Accordion Item #1
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is
+            shown by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- internal JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
