@@ -1,6 +1,5 @@
 // Initialize the news api parameters
-source = "India";
-let apiKey = "f22f0eb7e00d472a8d39aeb53b97fea7";
+let apiKey = "pub_21753915dabf06c2f3dd6fc9765ed4d9f664a";
 
 // grab the news container
 let NewsAccordian = document.getElementById("NewsCard");
@@ -9,7 +8,7 @@ let NewsAccordian = document.getElementById("NewsCard");
 const xhr = new XMLHttpRequest();
 xhr.open(
   "GET",
-  `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`,
+  `https://newsdata.io/api/1/news?country=in&apikey=${apiKey}`,
   true
 );
 
@@ -17,22 +16,22 @@ xhr.open(
 xhr.onload = function () {
   if (this.status === 200) {
     let json = JSON.parse(this.responseText);
-    let articles = json.articles;
+    let articles = json.results || [];
     console.log(articles);
     let newsHtml = "";
     articles.forEach(function (element) {
       let news = ` <div class="col">
                     <div class="card">
-                    <div class="card-header">${element.source['name']}</div>
-                      <img src="${element["urlToImage"]}" class="card-img-top"
+                    <div class="card-header">${element['creator']}</div>
+                      <img src="${element["image_url"]}" class="card-img-top"
                         alt="" />
                       <div class="card-body">
                         <h5 class="card-title">${element["title"]}</h5>
                         <p class="card-text">${element["description"]}</p>
                       </div>
-                      <a href="${element['url']}" target="_blank" class="btn btn-primary">Click here to Read more</a>
+                      <a href="${element['link']}" target="_blank" class="btn btn-primary">Click here to Read more</a>
                       <div class="card-footer">
-                    <small class="text-body-secondary">${element["publishedAt"]}</small>
+                    <small class="text-body-secondary">${element["pubDate"]}</small>
                       </div>
                     </div>
                   </div>`;
