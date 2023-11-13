@@ -1,6 +1,4 @@
-import React from "react";
 
-const Hero = () => {
   // Initialize the news api parameters
   let apiKey = "pub_21753915dabf06c2f3dd6fc9765ed4d9f664a";
 
@@ -45,6 +43,8 @@ const Hero = () => {
 
   xhr.send();
 
+// hero component function
+const Hero = () => {
   return (
     <>
       <div className="Hero">
