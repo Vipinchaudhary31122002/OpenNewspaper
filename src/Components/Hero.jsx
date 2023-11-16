@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // hero component function
 const Hero = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   let apiKey = "pub_21753915dabf06c2f3dd6fc9765ed4d9f664a";
   const updateNews = async () => {
     let response = await fetch(
@@ -9,11 +9,12 @@ const Hero = () => {
     );
     let parsedData = await response?.json();
     console.log(parsedData);
-    setData(parsedData);
+    // setData(parsedData);
   };
-  useEffect(() => {
-    updateNews();
-  });
+  console.log(updateNews);
+  // useEffect(() => {
+  //   updateNews();
+  // });
 
   return (
     <>
@@ -27,27 +28,6 @@ const Hero = () => {
           className="row row-cols-1 row-cols-md-2 g-1 text-center"
           id="NewsCard"
         >
-          {data?.results?.code ==="RatelimitExceeded"?
-          console.log("ratelimitexceeded"):
-          data?.results === undefined?
-          console.log("loading"): 
-          data?.results?.map((element, index) => {
-            <div className="col" key={index}>
-              <div className="card">
-                <div className="card-body">
-                  Api Working
-                  <h5 className="card-title">${element["title"]}</h5>
-                  <p className="card-text">${element["description"]}</p>
-                </div>
-                {/* <a href="${element["link"]}" target="_blank" className="btn btn-primary">Click here to Read more</a> */}
-                <div className="card-footer">
-                  <small className="text-body-secondary">
-                    ${element["pubDate"]}
-                  </small>
-                </div>
-              </div>
-            </div>;
-          })}
         </div>
       </div>
     </>
@@ -55,3 +35,26 @@ const Hero = () => {
 };
 
 export default Hero;
+
+// {
+//   data.results.code ==="RatelimitExceeded"?
+//   console.log("ratelimitexceeded"):
+//   data.results === undefined?
+//   console.log("loading"): 
+//   data.results.map((element, index) => {
+//     <div className="col" key={index}>
+//       <div className="card">
+//         <div className="card-body">
+//           Api Working
+//           <h5 className="card-title">${element["title"]}</h5>
+//           <p className="card-text">${element["description"]}</p>
+//         </div>
+//         {/* <a href="${element["link"]}" target="_blank" className="btn btn-primary">Click here to Read more</a> */}
+//         <div className="card-footer">
+//           <small className="text-body-secondary">
+//             ${element["pubDate"]}
+//           </small>
+//         </div>
+//       </div>
+//     </div>;
+//   })}
