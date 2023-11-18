@@ -1,6 +1,6 @@
 const NewsCard = () => {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4">
+    <>
       <div className="col">
         <div className="card">
           <img src="..." className="card-img-top" alt="..." />
@@ -52,7 +52,7 @@ const NewsCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
