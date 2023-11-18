@@ -1,5 +1,5 @@
 // importing components
-import NewsCard from "./NewsCard";
+// import NewsCard from "./NewsCard";
 
 // hero component function
 const Hero = () => {
@@ -11,7 +11,7 @@ const Hero = () => {
           <span className="badge bg-primary m-auto">Trending News</span>
         </h1>
         <div className="NewsContainer">
-          <NewsCard />
+          {/* <NewsCard /> */}
         </div>
       </div>
     </>
