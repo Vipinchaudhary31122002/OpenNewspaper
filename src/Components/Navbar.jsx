@@ -1,6 +1,11 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  // navigate to the specifiec path
+  const handleLinkClick = (path) => {
+    navigate(path);
+  };
   return (
     <div>
       <nav className="navbar navbar-dark bg-dark">
@@ -34,56 +39,109 @@ const Navbar = () => {
               ></button>
             </div>
             <div className="offcanvas-body">
-              {/* <button type="button" className="btn btn-primary m-1">
-                <Link to="/business">Business News</Link>
-              </button> */}
-              <button type="button" className="btn btn-primary m-1">
-                <Link to="/technology">Technology News</Link>
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/")}
+                data-bs-dismiss="offcanvas"
+              >
+                Business News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/technology")}
+                data-bs-dismiss="offcanvas"
+              >
+                Technology News
+              </button>
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/entertainment")}
+                data-bs-dismiss="offcanvas"
+              >
                 Entertainment News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/sports")}
+                data-bs-dismiss="offcanvas"
+              >
                 Sports News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/science")}
+                data-bs-dismiss="offcanvas"
+              >
                 Science News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/crime")}
+                data-bs-dismiss="offcanvas"
+              >
                 Crime News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/domestic")}
+                data-bs-dismiss="offcanvas"
+              >
                 Domestic News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/education")}
+                data-bs-dismiss="offcanvas"
+              >
                 Education News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/food")}
+                data-bs-dismiss="offcanvas"
+              >
                 Food News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/health")}
+                data-bs-dismiss="offcanvas"
+              >
                 Health News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/environment")}
+                data-bs-dismiss="offcanvas"
+              >
                 Environment News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/politics")}
+                data-bs-dismiss="offcanvas"
+              >
                 Politics News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
-                Top News
-              </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/tourism")}
+                data-bs-dismiss="offcanvas"
+              >
                 Tourism News
               </button>
-              <button type="button" className="btn btn-primary  m-1">
+              <button
+                className="btn btn-primary m-2"
+                onClick={() => handleLinkClick("/world")}
+                data-bs-dismiss="offcanvas"
+              >
                 World News
               </button>
             </div>
           </div>
         </div>
       </nav>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 // import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+
 // importing components
 // import NewsCard from "./NewsCard";
 
 // hero component function
-const Hero = () => {
+const Hero = (props) => {
   // const [data, setdata] = useState("");
   // const getapidata = async () => {
   //   try {
@@ -16,7 +17,7 @@ const Hero = () => {
   //     const data = await res.json();
   //     // console.log(data);
   //     setdata(data);
-      
+
   //   } catch (error) {
   //     console.log(error);
   //   }
@@ -29,10 +30,10 @@ const Hero = () => {
       <div className="Hero">
         {/* title below the navbar */}
         <h1>
-          <span className="badge bg-primary m-auto">Trending</span>
+          <span className="badge bg-primary m-auto">{props.category} News</span>
         </h1>
         <div className="NewsCardContainer row row-cols-1 row-cols-md-2 g-4">
-          <h1>This is Hero Component</h1>
+          <h1>This is {props.category} Component</h1>
           {/* {data.results.map((element) => (
             <NewsCard title={element.title} />
           ))} */}
@@ -42,12 +43,14 @@ const Hero = () => {
   );
 };
 
+// default props
 Hero.defaultProps = {
-  country: "Trending",
+  category: "Business",
 };
 
+// typechecking for props
 Hero.propTypes = {
-  title: PropTypes.string,
+  category: PropTypes.string,
 };
 
 export default Hero;
