@@ -1,32 +1,28 @@
 // importing libraries
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // importing components
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
-// import 'dotenv/config';
+import Error from "./Components/Error"
 
 // importing stylesheet
 import "./App.css";
 // import "./Styles/Navbar.css";
 import "./Styles/Hero.css";
 
-// const apiKey = process.env.REACT_APP_NEWS_API;
-
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      {/* <Routes>
-        <Route path="/" element={<Hero />}></Route>
-        <Route
-          exact
-          path="/business"
-          element={<Hero title="business" />}
-        ></Route>
-      </Routes> */}
-      <Hero title="Trending"/>
-      </>
+    <Routes>
+      <Route path="/" element={<Navbar/>}>
+        <Route index element={<Hero/>}/>
+        <Route path="*" element={<Error/>}/>
+        </Route>
+    </Routes>
+      {/* <Navbar></Navbar> */}
+      {/* <Hero/> */}
+    </>
   );
 }
 

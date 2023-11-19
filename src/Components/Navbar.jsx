@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -37,9 +37,9 @@ const Navbar = () => {
               {/* <button type="button" className="btn btn-primary m-1">
                 <Link to="/business">Business News</Link>
               </button> */}
-              {/* <button type="button" className="btn btn-primary m-1">
+              <button type="button" className="btn btn-primary m-1">
                 <Link to="/technology">Technology News</Link>
-              </button> */}
+              </button>
               <button type="button" className="btn btn-primary  m-1">
                 Entertainment News
               </button>
@@ -83,6 +83,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <Outlet/>
     </div>
   );
 };
