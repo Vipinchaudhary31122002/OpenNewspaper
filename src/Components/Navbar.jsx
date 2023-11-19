@@ -1,3 +1,5 @@
+// import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -32,12 +34,12 @@ const Navbar = () => {
               ></button>
             </div>
             <div className="offcanvas-body">
-              <button type="button" className="btn btn-primary m-1">
-                Business News
-              </button>
-              <button type="button" className="btn btn-primary m-1">
-                Technology News
-              </button>
+              {/* <button type="button" className="btn btn-primary m-1">
+                <Link to="/business">Business News</Link>
+              </button> */}
+              {/* <button type="button" className="btn btn-primary m-1">
+                <Link to="/technology">Technology News</Link>
+              </button> */}
               <button type="button" className="btn btn-primary  m-1">
                 Entertainment News
               </button>
