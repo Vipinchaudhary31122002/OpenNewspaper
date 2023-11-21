@@ -30,7 +30,7 @@ const Hero = (props) => {
       <div className="Hero">
         {/* title below the navbar */}
         <h1>
-          <span className="badge bg-primary m-auto">{props.category} News</span>
+          <span className="badge bg-primary m-auto">Trending {props.category} News</span>
         </h1>
         <div className="NewsCardContainer row row-cols-1 row-cols-md-2 g-4">
           <h1>This is {props.category} Component</h1>
