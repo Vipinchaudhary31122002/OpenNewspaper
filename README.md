@@ -1,1 +1,1 @@
-# NewsX
+# OpenNews
