@@ -10,7 +10,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <span className="navbar-brand">Welcome to NewsX</span>
+          <span className="navbar-brand">OpenNews</span>
           <button
             className="navbar-toggler"
             type="button"
