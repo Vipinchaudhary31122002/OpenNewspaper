@@ -1,20 +1,17 @@
+/* eslint-disable react/prop-types */
 const NewsCard = (props) => {
-  let { title } = props;
+  let { title, description, image } = props;
   return (
     <>
-      <div className="col">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
+      {/* <div className="col" key={key}> */}
+      <div className="card">
+        <img src={image} className="card-img-top" height="300" width="200" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{description}</p>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };
