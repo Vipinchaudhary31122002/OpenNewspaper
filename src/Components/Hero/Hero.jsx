@@ -1,8 +1,12 @@
+// importing libraries
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-// importing components
-import NewsCard from "./NewsCard";
+// importing component
+import NewsCard from "../NewsCard/NewsCard";
+
+// importing stylesheet
+import "./Hero.css"
 
 // hero component function
 const Hero = (props) => {

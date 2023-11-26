@@ -2,14 +2,9 @@
 import { Route, Routes } from "react-router-dom";
 
 // importing components
-import Navbar from "./Components/Navbar";
-import Hero from "./Components/Hero";
-import Error from "./Components/Error";
-
-// importing stylesheet
-import "./App.css";
-import "./Styles/Hero.css";
-import "./Styles/Navbar.css";
+import Navbar from "./Components/Navbar/Navbar";
+import Hero from "./Components/Hero/Hero";
+import Error from "./Components/Error/Error";
 
 function App() {
   return (

@@ -1,4 +1,8 @@
+// importing libraries
 import { Outlet, useNavigate } from "react-router-dom";
+
+// importing stylesheet
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();

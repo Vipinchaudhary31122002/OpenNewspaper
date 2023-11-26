@@ -1,3 +1,6 @@
+// importing stylesheet
+import "./NewsCard.css"
+
 /* eslint-disable react/prop-types */
 const NewsCard = (props) => {
   let { title, description, image } = props;
