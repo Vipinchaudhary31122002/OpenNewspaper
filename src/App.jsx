@@ -2,7 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 
 // importing components
-import Navbar from "./Components/Navbar/Navbar";
+import Layout from "./layouts/Layout";
 import Hero from "./Components/Hero/Hero";
 import Error from "./Components/Error/Error";
 
@@ -10,15 +10,16 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Hero />} />
+          <Route path="sports" element={<Hero category="Sports" />} />
+          <Route path="science" element={<Hero category="Science" />} />
+          <Route path="business" element={<Hero category="Business" />} />
           <Route path="technology" element={<Hero category="Technology" />} />
           <Route
             path="entertainment"
             element={<Hero category="Entertainment" />}
           />
-          <Route path="sports" element={<Hero category="Sports" />} />
-          <Route path="science" element={<Hero category="Science" />} />
           <Route path="crime" element={<Hero category="Crime" />} />
           <Route path="domestic" element={<Hero category="Domestic" />} />
           <Route path="education" element={<Hero category="Education" />} />
@@ -30,6 +31,7 @@ function App() {
           <Route path="world" element={<Hero category="World" />} />
           <Route path="*" element={<Error />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );

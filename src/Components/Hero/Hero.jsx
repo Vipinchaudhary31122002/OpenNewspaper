@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import NewsCard from "../NewsCard/NewsCard";
 
 // importing stylesheet
-import "./Hero.css"
+import "./Hero.css";
 
 // hero component function
 const Hero = (props) => {
@@ -37,7 +37,7 @@ const Hero = (props) => {
           </span>
         </h1>
         <div className="NewsCardContainer row row-cols-1 row-cols-md-2 g-4">
-          {data?.results?.map((element, index) => (
+          {Array.isArray(data?.results) && data?.results?.map((element, index) => (
             <div className="col" key={index}>
               <NewsCard
                 title={element.title}
@@ -54,7 +54,7 @@ const Hero = (props) => {
 
 // default props
 Hero.defaultProps = {
-  category: "Business",
+  category: "Top",
 };
 
 // typechecking for props

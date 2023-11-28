@@ -1,6 +1,6 @@
 const Error = () => {
   return (
-    <div>Error</div>
+    <div>This is a Error Component</div>
   )
 }
 
