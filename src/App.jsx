@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route exact path="/" element={<Layout />}>
           <Route index element={<Hero />} />
           <Route path="sports" element={<Hero category="Sports" />} />
           <Route path="science" element={<Hero category="Science" />} />
