@@ -40,6 +40,13 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
+      - name: Build and deploy
+        run: |
+          # Your build and deploy commands here
+          echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+          # Rest of your build and deploy script
+        env:
+          API_KEY: ${{ secrets.OPENNEWSAPIKEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
