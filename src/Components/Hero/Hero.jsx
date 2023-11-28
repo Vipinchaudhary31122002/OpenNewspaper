@@ -16,7 +16,7 @@ const Hero = (props) => {
       try {
         const res = await fetch(
           `https://newsdata.io/api/1/news?&apikey=${
-            import.meta.env.VITE_REACT_APP_NEWS_API
+            import.meta.env.secrets.OPENNEWSAPIKEY
           }&category=${props.category}&language=en&image=1`
         );
         const newsdata = await res.json();
