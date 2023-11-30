@@ -12,7 +12,11 @@ function App() {
   const [Progress, setProgress] = useState(0);
   return (
     <>
-      <LoadingBar progress={Progress} />
+      <LoadingBar
+        height={3}
+        progress={Progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <Routes>
         <Route exact path="/" element={<Layout />}>
           <Route index element={<Hero setProgress={setProgress} />} />

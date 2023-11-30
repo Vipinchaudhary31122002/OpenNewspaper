@@ -2,9 +2,6 @@
 import { Home } from "@mui/icons-material";
 import { Outlet, useNavigate } from "react-router-dom";
 
-// importing stylesheet
-import "./Layout.css";
-
 const Navbar = () => {
   const navigate = useNavigate();
   // navigate to the specifiec path
@@ -16,7 +13,16 @@ const Navbar = () => {
       <div>
         <nav className="navbar navbar-dark bg-dark">
           <div className="container-fluid">
-            <span className="navbar-brand">OpenNews</span>
+            <span className="navbar-brand">
+              <img
+                src="news.png"
+                alt="logo"
+                width="30"
+                height="24"
+                className="d-inline-block align-text-top"
+              />
+              <span className="p-1">OpenNews</span>
+            </span>
             <button
               className="navbar-toggler"
               type="button"

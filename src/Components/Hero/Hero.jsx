@@ -25,7 +25,7 @@ const Hero = (props) => {
         );
         props.setProgress(30);
         const newsdata = await res.json();
-        props.setProgress(70);
+        props.setProgress(60);
         setdata(newsdata);
         props.setProgress(100);
       } catch (error) {
@@ -52,13 +52,17 @@ const Hero = (props) => {
             data?.results?.map((element, index) => (
               <div className="col" key={index}>
                 <NewsCard
-                  title={element.title}
+                  title={
+                    element.title ? element.title.slice(0, 50) + "..." : " "
+                  }
                   description={
                     element.description
-                      ? element.description.slice(0, 200) + "..."
+                      ? element.description.slice(0, 100) + "..."
                       : ""
                   }
                   image={element.image_url ? element.image_url : "news.png"}
+                  url={element.link}
+                  source={element.source_id}
                 />
               </div>
             ))
