@@ -1,4 +1,5 @@
 // importing libraries
+import { Home } from "@mui/icons-material";
 import { Outlet, useNavigate } from "react-router-dom";
 
 // importing stylesheet
@@ -33,6 +34,10 @@ const Navbar = () => {
               aria-labelledby="offcanvasDarkNavbarLabel"
             >
               <div className="offcanvas-header">
+                <Home
+                  onClick={() => handleLinkClick("/")}
+                  data-bs-dismiss="offcanvas"
+                />
                 <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
                   News Categories
                 </h5>
@@ -44,14 +49,7 @@ const Navbar = () => {
                 ></button>
               </div>
               <div className="offcanvas-body">
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Home
-                </button>
-                <br/>
+                <br />
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/business")}
