@@ -37,6 +37,7 @@ const Navbar = () => {
                 <Home
                   onClick={() => handleLinkClick("/")}
                   data-bs-dismiss="offcanvas"
+                  cursor="pointer"
                 />
                 <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
                   News Categories

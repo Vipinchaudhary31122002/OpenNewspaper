@@ -1,37 +1,81 @@
 // importing libraries
 import { Route, Routes } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
 
 // importing components
 import Layout from "./layouts/Layout";
 import Hero from "./Components/Hero/Hero";
 import Error from "./Components/Error/Error";
+import { useState } from "react";
 
 function App() {
+  const [Progress, setProgress] = useState(0);
   return (
     <>
+      <LoadingBar progress={Progress} />
       <Routes>
         <Route exact path="/" element={<Layout />}>
-          <Route index element={<Hero />} />
-          <Route path="sports" element={<Hero category="Sports" />} />
-          <Route path="science" element={<Hero category="Science" />} />
-          <Route path="business" element={<Hero category="Business" />} />
-          <Route path="technology" element={<Hero category="Technology" />} />
+          <Route index element={<Hero setProgress={setProgress} />} />
+          <Route
+            path="sports"
+            element={<Hero category="Sports" setProgress={setProgress} />}
+          />
+          <Route
+            path="science"
+            element={<Hero category="Science" setProgress={setProgress} />}
+          />
+          <Route
+            path="business"
+            element={<Hero category="Business" setProgress={setProgress} />}
+          />
+          <Route
+            path="technology"
+            element={<Hero category="Technology" setProgress={setProgress} />}
+          />
           <Route
             path="entertainment"
-            element={<Hero category="Entertainment" />}
+            element={
+              <Hero category="Entertainment" setProgress={setProgress} />
+            }
           />
-          <Route path="crime" element={<Hero category="Crime" />} />
-          <Route path="domestic" element={<Hero category="Domestic" />} />
-          <Route path="education" element={<Hero category="Education" />} />
-          <Route path="food" element={<Hero category="Food" />} />
-          <Route path="health" element={<Hero category="Health" />} />
-          <Route path="environment" element={<Hero category="Environment" />} />
-          <Route path="politics" element={<Hero category="Politics" />} />
-          <Route path="tourism" element={<Hero category="Tourism" />} />
-          <Route path="world" element={<Hero category="World" />} />
+          <Route
+            path="crime"
+            element={<Hero category="Crime" setProgress={setProgress} />}
+          />
+          <Route
+            path="domestic"
+            element={<Hero category="Domestic" setProgress={setProgress} />}
+          />
+          <Route
+            path="education"
+            element={<Hero category="Education" setProgress={setProgress} />}
+          />
+          <Route
+            path="food"
+            element={<Hero category="Food" setProgress={setProgress} />}
+          />
+          <Route
+            path="health"
+            element={<Hero category="Health" setProgress={setProgress} />}
+          />
+          <Route
+            path="environment"
+            element={<Hero category="Environment" setProgress={setProgress} />}
+          />
+          <Route
+            path="politics"
+            element={<Hero category="Politics" setProgress={setProgress} />}
+          />
+          <Route
+            path="tourism"
+            element={<Hero category="Tourism" setProgress={setProgress} />}
+          />
+          <Route
+            path="world"
+            element={<Hero category="World" setProgress={setProgress} />}
+          />
           <Route path="*" element={<Error />} />
         </Route>
-        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
