@@ -13,16 +13,7 @@ const Navbar = () => {
       <div>
         <nav className="navbar navbar-dark bg-dark">
           <div className="container-fluid">
-            <span className="navbar-brand">
-              <img
-                src="news.png"
-                alt="logo"
-                width="30"
-                height="24"
-                className="d-inline-block align-text-top"
-              />
-              <span className="p-1">OpenNews</span>
-            </span>
+            <span className="navbar-brand">OpenNews</span>
             <button
               className="navbar-toggler"
               type="button"
@@ -91,27 +82,6 @@ const Navbar = () => {
                   data-bs-dismiss="offcanvas"
                 >
                   Science News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/crime")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Crime News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/domestic")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Domestic News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/education")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Education News
                 </button>
                 <button
                   className="btn btn-primary m-2"

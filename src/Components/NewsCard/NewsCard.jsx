@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 const NewsCard = (props) => {
-  let { title, description, image, url, source } = props;
+  let { title, image, url, source } = props;
   return (
     <>
-      <div className="card text-center">
+      <div className="card h-100 text-center">
         <div
           style={{
             display: "flex",
@@ -13,7 +13,7 @@ const NewsCard = (props) => {
           }}
         >
           <span className="badge bg-danger">
-            <h5>{source}</h5>
+            <h6>{source}</h6>
           </span>
         </div>
         <img
@@ -24,7 +24,6 @@ const NewsCard = (props) => {
         />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
           <a
             rel="noreferrer"
             href={url}

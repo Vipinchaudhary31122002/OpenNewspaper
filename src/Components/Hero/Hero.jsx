@@ -44,7 +44,7 @@ const Hero = (props) => {
             Trending {props.category} News
           </span>
         </h1>
-        <div className="NewsCardContainer row row-cols-1 row-cols-md-2 g-4">
+        <div className="NewsCardContainer row row-cols-1 row-cols-md-4 g-4">
           {data?.results?.code === "RateLimitExceeded" ? (
             <Error />
           ) : (
@@ -52,14 +52,7 @@ const Hero = (props) => {
             data?.results?.map((element, index) => (
               <div className="col" key={index}>
                 <NewsCard
-                  title={
-                    element.title ? element.title.slice(0, 50) + "..." : " "
-                  }
-                  description={
-                    element.description
-                      ? element.description.slice(0, 100) + "..."
-                      : ""
-                  }
+                  title={element.title}
                   image={element.image_url ? element.image_url : "news.png"}
                   url={element.link}
                   source={element.source_id}
