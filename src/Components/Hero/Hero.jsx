@@ -53,7 +53,7 @@ const Hero = (props) => {
               <div className="col" key={index}>
                 <NewsCard
                   title={element.title}
-                  image={element.image_url ? element.image_url : "news.png"}
+                  image={element.image_url ? element.image_url : "/news.png"}
                   url={element.link}
                   source={element.source_id}
                 />

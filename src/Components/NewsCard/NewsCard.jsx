@@ -3,7 +3,7 @@ const NewsCard = (props) => {
   let { title, image, url, source } = props;
   return (
     <>
-      <div className="card h-100 text-center">
+      <div className="card h-100 text-center border-dark">
         <div
           style={{
             display: "flex",
@@ -21,6 +21,21 @@ const NewsCard = (props) => {
           className="card-img-top img-thumbnail img-fluid"
           alt="Image"
           loading="eager"
+          // onError={({ currentTarget }) => {
+          //   // currentTarget.onerror = null; // prevents looping
+          //   const defaultImageSrc="news.png";
+          //   // Check if the current image source is the default image
+          //   if (currentTarget.src !== defaultImageSrc) {
+          //     // If not, set the source to the default image
+          //     currentTarget.src = defaultImageSrc;
+          //   } 
+          //   else {
+          //     // If it is the default image and still fails, set a placeholder image or handle accordingly
+          //     // currentTarget.src = "placeholder-image.png";
+          //     // Optionally, you can remove the onError handler to prevent further attempts
+          //     currentTarget.onerror = null;
+          //   }
+          // }}
         />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>

@@ -11,9 +11,18 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark bg-bg-body-tertiary">
           <div className="container-fluid">
-            <span className="navbar-brand">OpenNews</span>
+            <span className="navbar-brand">
+              <img
+                src="/news.png"
+                alt="logo"
+                width="30"
+                height="24"
+                className="d-inline-block align-text-top"
+              />
+              <span className="m-1">OpenNews</span>
+            </span>
             <button
               className="navbar-toggler"
               type="button"
