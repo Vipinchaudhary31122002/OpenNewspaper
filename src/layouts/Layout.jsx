@@ -92,48 +92,6 @@ const Navbar = () => {
                 >
                   Science News
                 </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/food")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Food News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/health")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Health News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/environment")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Environment News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/politics")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Politics News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/tourism")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  Tourism News
-                </button>
-                <button
-                  className="btn btn-primary m-2"
-                  onClick={() => handleLinkClick("/world")}
-                  data-bs-dismiss="offcanvas"
-                >
-                  World News
-                </button>
               </div>
             </div>
           </div>

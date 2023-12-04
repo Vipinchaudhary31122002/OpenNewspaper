@@ -42,31 +42,6 @@ function App() {
               <Hero category="Entertainment" setProgress={setProgress} />
             }
           />
-          
-          <Route
-            path="food"
-            element={<Hero category="Food" setProgress={setProgress} />}
-          />
-          <Route
-            path="health"
-            element={<Hero category="Health" setProgress={setProgress} />}
-          />
-          <Route
-            path="environment"
-            element={<Hero category="Environment" setProgress={setProgress} />}
-          />
-          <Route
-            path="politics"
-            element={<Hero category="Politics" setProgress={setProgress} />}
-          />
-          <Route
-            path="tourism"
-            element={<Hero category="Tourism" setProgress={setProgress} />}
-          />
-          <Route
-            path="world"
-            element={<Hero category="World" setProgress={setProgress} />}
-          />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
