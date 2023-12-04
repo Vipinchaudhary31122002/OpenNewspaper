@@ -44,6 +44,7 @@ function App() {
           />
           <Route path="*" element={<Error />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
