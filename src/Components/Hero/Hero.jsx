@@ -46,7 +46,7 @@ const Hero = (props) => {
         </h1>
         <div className="NewsCardContainer row row-cols-1 row-cols-md-4 g-4">
           {data?.results?.code === "RateLimitExceeded" ? (
-            <Error />
+            <Error title="Rate Limit Exceeded Please Try Again Tomorrow" />
           ) : (
             Array.isArray(data?.results) &&
             data?.results?.map((element, index) => (
