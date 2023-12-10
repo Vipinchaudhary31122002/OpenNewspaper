@@ -3,6 +3,7 @@ import { Home } from "@mui/icons-material";
 import { Outlet, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  // useNavigate hook used to navigate bw the nested routes
   const navigate = useNavigate();
   // navigate to the specifiec path
   const handleLinkClick = (path) => {
@@ -11,6 +12,7 @@ const Navbar = () => {
   return (
     <>
       <div>
+        {/* offcanvas navbar */}
         <nav className="navbar navbar-dark bg-dark bg-bg-body-tertiary">
           <div className="container-fluid">
             <span className="navbar-brand">
@@ -21,7 +23,7 @@ const Navbar = () => {
                 height="24"
                 className="d-inline-block align-text-top"
               />
-              <span className="m-1">OpenNews</span>
+              <span className="m-1">OpenNewspaper</span>
             </span>
             <button
               className="navbar-toggler"
@@ -39,15 +41,18 @@ const Navbar = () => {
               id="offcanvasDarkNavbar"
               aria-labelledby="offcanvasDarkNavbarLabel"
             >
+              {/* Home icon which takes the user to the home page of web application */}
               <div className="offcanvas-header">
                 <Home
                   onClick={() => handleLinkClick("/")}
                   data-bs-dismiss="offcanvas"
                   cursor="pointer"
                 />
+                {/* offcanvas navbar title */}
                 <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
                   News Categories
                 </h5>
+                {/* offcanvas navbar close button */}
                 <button
                   type="button"
                   className="btn-close btn-close-white"
@@ -57,6 +62,7 @@ const Navbar = () => {
               </div>
               <div className="offcanvas-body">
                 <br />
+                {/* button which takes the user to the business page */}
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/business")}
@@ -64,6 +70,7 @@ const Navbar = () => {
                 >
                   Business News
                 </button>
+                {/* button which takes the user to the technology page */}
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/technology")}
@@ -71,6 +78,7 @@ const Navbar = () => {
                 >
                   Technology News
                 </button>
+                {/* button which takes the user to the entertainment page */}
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/entertainment")}
@@ -78,6 +86,8 @@ const Navbar = () => {
                 >
                   Entertainment News
                 </button>
+                {/* button which takes the user to the sports page */}
+
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/sports")}
@@ -85,6 +95,8 @@ const Navbar = () => {
                 >
                   Sports News
                 </button>
+                {/* button which takes the user to the science page */}
+
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/science")}
@@ -97,6 +109,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+      {/* outlet element of react router dom library which renders all the nested component here */}
       <Outlet />
     </>
   );
