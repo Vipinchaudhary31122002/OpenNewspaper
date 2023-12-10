@@ -2,9 +2,9 @@
 
 OpenNewspaper is a web application designed to revolutionize the way users access and engage with news articles. Our platform offers a seamless and intuitive experience for discovering, reading, and sharing news from diverse sources. With a focus on user-friendliness and accessibility, OpenNewspaper is your go-to destination for staying informed about current events. OpenNewspaper use NewsData.io api for show you the latest article.
 
-![App Screenshot](/public/screenshot.png)
+![App Screenshot](/public/Screenshot.png)
 
-Visit https://open-news-five.vercel.app/ 
+Visit https://opennewspaper.vercel.app/ 
 
 ## Features
 
