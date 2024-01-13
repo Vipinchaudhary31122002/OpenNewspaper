@@ -18,7 +18,7 @@ function App() {
     <>
       {/* loadingbar element */}
       <LoadingBar
-        height={3}
+        height={5}
         progress={Progress}
         onLoaderFinished={() => setProgress(0)}
       />

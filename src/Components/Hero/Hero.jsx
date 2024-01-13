@@ -11,31 +11,15 @@ import Error from "../Error/Error";
 // importing stylesheet
 import "./Hero.css";
 
-// defining the method, url, headers and data paratmeter for api
-const options = {
-  method: "POST",
-  url: "https://newsnow.p.rapidapi.com/newsv2",
-  headers: {
-    "content-type": "application/json",
-    "X-RapidAPI-Key": import.meta.env.API_KEY,
-    "X-RapidAPI-Host": "newsnow.p.rapidapi.com",
-  },
-  data: {
-    query: "AI",
-    page: 1,
-    time_bounded: true,
-    from_date: "01/02/2021",
-    to_date: "05/06/2021",
-    location: "",
-    category: "",
-    source: "",
-  },
-};
-
 // hero component function
 const Hero = (props) => {
   // usestate hook for managing the data which is fetched from the api.
   const [data, setdata] = useState("");
+  // defining the method, url, headers and data paratmeter for api
+  const options = {
+    method: 'GET',
+    url: `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${import.meta.env.OPENNEWSPAPER_APIKEY}`,
+  };
   // useeffect hook for calling the api so the data can be fetched
   useEffect(() => {
     const getapidata = async () => {
@@ -43,11 +27,8 @@ const Hero = (props) => {
       // try block set the connection to the api and get the response
       try {
         const response = await axios.request(options);
-        console.log(response.data);
         props.setProgress(30);
-        // setting the response in the json formart in newsdata variable
         const newsdata = await response.data;
-        // console.log(newsdata);
         props.setProgress(60);
         // updating the data by using setdata function
         setdata(newsdata);
@@ -77,15 +58,15 @@ const Hero = (props) => {
             <Error title="Rate Limit Exceeded Please Try Again Later" />
           ) : (
             // mapping all the results that are in the data state and calling the newscard component with title, image, url and source property passed as props.
-            Array.isArray(data?.items) &&
-            data?.items?.map((element, index) => (
+            Array.isArray(data?.articles) &&
+            data?.articles?.map((element, index) => (
               <div className="col" key={index}>
                 <NewsCard
                   title={element.title}
-                  // if null value is returned in image in the json then news.png will displayed
-                  image={element.images ? element.image : "/news.png"}
+                  // if null value is returned in image and source in the json then news.png and OpenNewpaper title will displayed
+                  image={element.urlToImage ? element.urlToImage : "/news.png"}
                   url={element.url}
-                  source={element.source_id}
+                  source={element.source.id ? element.source.id: "OpenNewspaper"}
                 />
               </div>
             ))
@@ -98,7 +79,7 @@ const Hero = (props) => {
 
 // default props
 Hero.defaultProps = {
-  category: "Top",
+  category: "General",
 };
 
 // typechecking for props
