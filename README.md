@@ -1,6 +1,6 @@
 # OpenNewspaper
 
-OpenNewspaper is a web application designed to revolutionize the way users access and engage with news articles. Our platform offers a seamless and intuitive experience for discovering, reading, and sharing news from diverse sources. With a focus on user-friendliness and accessibility, OpenNewspaper is your go-to destination for staying informed about current events. OpenNewspaper use NewsData.io api for show you the latest article.
+OpenNewspaper is a web application designed to revolutionize the way users access and engage with news articles. Our platform offers a seamless and intuitive experience for discovering, reading, and sharing news from diverse sources. With a focus on user-friendliness and accessibility, OpenNewspaper is your go-to destination for staying informed about current events. OpenNewspaper use Rapid API for show you the latest article.
 
 ## Features
 
@@ -32,8 +32,6 @@ OpenNewspaper is a project under active development, with exciting features plan
 
 ## Tech Stack
 
-**Client:** Html, Css, Bootstrap5, JavaScript, React
+**Client:** Html5, Css3, Bootstrap5, JavaScript, React
 
-**Server:** Node
-
-**API:** NewsData.io
+**API:** RapidAPI
