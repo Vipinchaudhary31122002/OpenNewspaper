@@ -96,13 +96,20 @@ const Navbar = () => {
                   Sports News
                 </button>
                 {/* button which takes the user to the science page */}
-
                 <button
                   className="btn btn-primary m-2"
                   onClick={() => handleLinkClick("/science")}
                   data-bs-dismiss="offcanvas"
                 >
                   Science News
+                </button>
+                {/* button which takes the user to the health page */}
+                <button
+                  className="btn btn-primary m-2"
+                  onClick={() => handleLinkClick("/health")}
+                  data-bs-dismiss="offcanvas"
+                >
+                  Health News
                 </button>
               </div>
             </div>

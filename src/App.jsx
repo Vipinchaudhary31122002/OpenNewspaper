@@ -55,6 +55,13 @@ function App() {
               <Hero category="Entertainment" setProgress={setProgress} />
             }
           />
+          {/* health route */}
+          <Route
+            path="health"
+            element={
+              <Hero category="Health" setProgress={setProgress} />
+            }
+          />
           {/* error route if any error occurs */}
           <Route path="*" element={<Error />} />
         </Route>

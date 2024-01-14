@@ -18,7 +18,17 @@ const Hero = (props) => {
   // defining the method, url, headers and data paratmeter for api
   const options = {
     method: 'GET',
-    url: `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${import.meta.env.OPENNEWSPAPER_APIKEY}`,
+    url: 'https://news-api14.p.rapidapi.com/top-headlines',
+    params: {
+      country: 'IN',
+      language: 'en',
+      pageSize: '10',
+      category: `${props.category}`
+    },
+    headers: {
+      'X-RapidAPI-Key': '9cf6e3d231mshcad91c898873fe5p16d030jsn6bb9ccdfbf82',
+      'X-RapidAPI-Host': 'news-api14.p.rapidapi.com'
+    }
   };
   // useeffect hook for calling the api so the data can be fetched
   useEffect(() => {
@@ -66,7 +76,7 @@ const Hero = (props) => {
                   // if null value is returned in image and source in the json then news.png and OpenNewpaper title will displayed
                   image={element.urlToImage ? element.urlToImage : "/news.png"}
                   url={element.url}
-                  source={element.source.id ? element.source.id: "OpenNewspaper"}
+                  source={element.publisher.name ? element.publisher.name: "OpenNewspaper"}
                 />
               </div>
             ))
@@ -79,7 +89,7 @@ const Hero = (props) => {
 
 // default props
 Hero.defaultProps = {
-  category: "General",
+  category: "All Categories",
 };
 
 // typechecking for props
