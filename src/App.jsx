@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 // importing components
-import Layout from "./layouts/Layout";
+import Homepage from "./pages/Homepage";
 import Hero from "./Components/Hero/Hero";
 import Error from "./Components/Error/Error";
 
@@ -25,7 +25,7 @@ function App() {
       {/* routing of all the pages */}
       <Routes>
         {/* default route */}
-        <Route exact path="/" element={<Layout />}>
+        <Route exact path="/" element={<Homepage />}>
           {/* default page to render on default route */}
           <Route index element={<Hero setProgress={setProgress} />} />
           {/* sports route */}

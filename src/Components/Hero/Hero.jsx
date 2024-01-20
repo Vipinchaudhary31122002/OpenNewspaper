@@ -26,7 +26,7 @@ const Hero = (props) => {
       category: `${props.category}`
     },
     headers: {
-      'X-RapidAPI-Key': '9cf6e3d231mshcad91c898873fe5p16d030jsn6bb9ccdfbf82',
+      'X-RapidAPI-Key': `${import.meta.env.VITE_RAPIDAPI_KEY}`,
       'X-RapidAPI-Host': 'news-api14.p.rapidapi.com'
     }
   };
