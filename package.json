@@ -1,16 +1,21 @@
 {
-  "name": "opennewspaper",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "OpenNewspaper is a web application designed to revolutionize the way users access and engage with news articles. Our platform offers a seamless and intuitive experience for discovering, reading, and sharing news from diverse sources. With a focus on user-friendliness and accessibility, OpenNewspaper is your go-to destination for staying informed about current events. OpenNewspaper use Rapid API for show you the latest article.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "installpackages": "npm run installbackend && npm run installfrontend",
-    "installbackend": " cd backend && npm install",
-    "installfrontend": " cd frontend && npm install",
-    "buildfrontend": "cd frontend && npm run build",
-    "startserver": "cd backend && npm run start"
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development nodemon server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
